@@ -21,3 +21,4 @@ runs:
       shell: bash
       run: |
         echo "$PATH"
+        which sigctl
