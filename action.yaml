@@ -16,4 +16,8 @@ runs:
         chmod +x ./sigctl
         echo "$PATH"
         echo "${{ github.action_path }}/sigctl" >> $GITHUB_PATH
+
+    - name: "Log PATH"
+      shell: bash
+      run: |
         echo "$PATH"
