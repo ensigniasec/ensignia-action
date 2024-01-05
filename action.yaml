@@ -14,4 +14,5 @@ runs:
         oras pull ghcr.io/ensigniasec/sigctl/sigctl-binary:latest
         tar -xvf ./dist/sigctl_Linux_x86_64.tar.gz -C ./
         chmod +x ./sigctl
+        echo "$PATH"
         echo "${{ github.action_path }}/sigctl" >> $GITHUB_PATH
