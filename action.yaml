@@ -2,6 +2,12 @@ name: Ensignia
 author: Ivan Vanderbyl
 description: Ensignia helps your team make better decisions about packages and dependencies.
 
+inputs:
+  sigctl-version:
+    description: "The version of sigctl to use"
+    required: true
+    default: "latest"
+
 runs:
   using: "composite"
   steps:
@@ -11,7 +17,7 @@ runs:
       shell: bash
       working-directory: ${{ github.action_path }}
       run: |
-        oras pull ghcr.io/ensigniasec/sigctl/sigctl-binary:latest
+        oras pull ghcr.io/ensigniasec/sigctl/sigctl-binary:${{ inputs.sigctl-version }}
         tar -xvf ./dist/sigctl_Linux_x86_64.tar.gz -C ./
         chmod +x ./sigctl
         mkdir -p bin
