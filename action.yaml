@@ -11,8 +11,8 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - uses: anchore/sbom-action/download-syft@v0.15.2
-    - uses: oras-project/setup-oras@v1.1.0
+    - uses: anchore/sbom-action/download-syft@da167eac915b4e86f08b264dbdbc867b61be6f0c # v0.20.5
+    - uses: oras-project/setup-oras@22ce207df3b08e061f537244349aac6ae1d214f6 # v1.2.4
     - name: Download sigctl
       shell: bash
       working-directory: ${{ github.action_path }}
